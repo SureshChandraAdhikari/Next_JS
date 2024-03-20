@@ -1,5 +1,4 @@
-
-import  mongoose  from "mongoose";
+import mongoose from "mongoose";
 
 // Define the schema for the User model
 const userSchema = new mongoose.Schema({
@@ -10,14 +9,13 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: [true, "Please Provide a Email"],
+    required: [true, "Please Provide an Email"],
     unique: true,
   },
   password: {
     type: String,
     required: [true, "Please Provide a Password"],
   },
-
   isVerified: {
     type: Boolean,
     default: false,
@@ -34,6 +32,6 @@ const userSchema = new mongoose.Schema({
 });
 
 // Create a model using the schema
-const User = mongoose.models.users || mongoose.model("User" , userSchema);
+const User = mongoose.models.User || mongoose.model("User", userSchema);
 
-module.exports = User;
+export default User;
